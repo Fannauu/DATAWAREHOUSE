@@ -72,7 +72,8 @@ def transform_weather_data(ti):
             "Sunset (Local Time)": sunset_time.strftime("%Y-%m-%d %H:%M:%S")
         }])
 
-        df.to_csv("/opt/airflow/dags/weather_data.csv", index=False)
+        df.to_csv("/opt/airflow/dags/weather_data.csv",
+                  index=False, encoding='utf-8-sig')
         print("Weather data transformed & saved as CSV with all required fields.")
         print(f"Data preview:\n{df.to_string()}")
     except Exception as e:

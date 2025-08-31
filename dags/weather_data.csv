@@ -1,2 +1,2 @@
-City,Description,Temperature (°C),Feels Like (°C),Minimum Temp (°C),Maximum Temp (°C),Pressure,Humidity,Wind Speed,Time of Record,Sunrise (Local Time),Sunset (Local Time)
-Phnom Penh,overcast clouds,26.38,26.38,26.38,26.38,1007,91,2.34,2025-08-31 15:59:15,2025-08-30 22:50:19,2025-08-31 11:11:30
+﻿City,Description,Temperature (°C),Feels Like (°C),Minimum Temp (°C),Maximum Temp (°C),Pressure,Humidity,Wind Speed,Time of Record,Sunrise (Local Time),Sunset (Local Time)
+Phnom Penh,overcast clouds,26.38,26.38,26.38,26.38,1007,91,1.91,2025-08-31 16:52:28,2025-08-30 22:50:19,2025-08-31 11:11:30
