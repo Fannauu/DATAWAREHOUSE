@@ -1,0 +1,7 @@
+{"timestamp":"2025-08-31T10:23:56.498435","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-31T10:23:56.498915","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/welcome_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-31T10:23:56.863141Z","level":"info","event":"Weather data transformed & saved as CSV with all required fields.","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T10:23:56.869891Z","level":"info","event":"Data preview:","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T10:23:56.870467Z","level":"info","event":"         City      Description  Temperature (°C)  Feels Like (°C)  Minimum Temp (°C)  Maximum Temp (°C)  Pressure  Humidity  Wind Speed       Time of Record Sunrise (Local Time)  Sunset (Local Time)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T10:23:56.870790Z","level":"info","event":"0  Phnom Penh  overcast clouds             30.76            37.76              30.76              30.76      1004        91        6.65  2025-08-31 10:20:05  2025-08-30 22:50:19  2025-08-31 11:11:29","chan":"stdout","logger":"task"}
+{"timestamp":"2025-08-31T10:23:56.870516","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

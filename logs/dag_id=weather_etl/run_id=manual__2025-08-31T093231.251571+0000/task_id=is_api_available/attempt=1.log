@@ -1,0 +1,6 @@
+{"timestamp":"2025-08-31T09:32:32.361702","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-08-31T09:32:32.362234","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/welcome_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-08-31T09:32:32.641471","level":"info","event":"Poking: data/2.5/weather?lat=11.5564&lon=104.9282&appid=68c8458c4ece3fa867626777478d59ad","logger":"airflow.task.operators.airflow.providers.http.sensors.http.HttpSensor"}
+{"timestamp":"2025-08-31T09:32:32.643636","level":"warning","event":"Using Connection.get_connection_from_secrets from `airflow.models` is deprecated.Please use `get` on Connection from sdk(`airflow.sdk.Connection`) instead","category":"DeprecationWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py","lineno":471,"logger":"py.warnings"}
+{"timestamp":"2025-08-31T09:32:32.644450","level":"info","event":"Connection Retrieved 'openweather_api'","logger":"airflow.hooks.base"}
+{"timestamp":"2025-08-31T09:32:33.185539","level":"info","event":"Success criteria met. Exiting.","logger":"airflow.task.operators.airflow.providers.http.sensors.http.HttpSensor"}
