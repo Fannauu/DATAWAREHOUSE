@@ -10,24 +10,24 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
     environment:
-      - _AIRFLOW_WWW_USER_USERNAME=airflow
-      - _AIRFLOW_WWW_USER_PASSWORD=password
-      - AIRFLOW_CONN_OPENWEATHER_API=http://api.openweathermap.org/
-      - AIRFLOW_CONN_MINIO_CONN=aws://admin:password@minio:9000/?endpoint_url=http%3A//minio%3A9000&region_name=us-east-1
-    command: airflow standalone
+      AIRFLOW_UID: "50000"  # Avoid permission issues on host
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__AUTH_MANAGER: "airflow.auth.managers.simple.SimpleAuthManager"  # Disable login
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"  # Allow everyone to access as admin
+      AIRFLOW_CONN_OPENWEATHER_API: "http://api.openweathermap.org/"
+      AIRFLOW_CONN_MINIO_CONN: "aws://admin:password@minio:9000/?endpoint_url=http%3A//minio%3A9000&region_name=us-east-1"
+    command: airflow standalone  # Start Airflow webserver and scheduler in one process
     depends_on:
       - minio
     networks:
       - airflow-network
 
-  # UNCOMMENTED MinIO service - this was your main problem!
   minio:
     image: minio/minio:RELEASE.2025-04-22T22-12-26Z-cpuv1
     ports:
       - "9000:9000"
       - "9001:9001"
     environment:
-      # Use the same credentials as in your connection string
       - MINIO_ROOT_USER=admin
       - MINIO_ROOT_PASSWORD=password
     command: server /data --console-address ":9001"

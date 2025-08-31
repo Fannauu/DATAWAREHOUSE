@@ -1,0 +1,29 @@
+# Ignore Airflow logs
+logs/
+airflow.db
+*.log
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+.env/
+.env.local
+
+# Ignore Docker & MinIO volumes
+minio_data/
+*.pid
+*.sock
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore editor configs
+.vscode/
+.idea/
+*.swp

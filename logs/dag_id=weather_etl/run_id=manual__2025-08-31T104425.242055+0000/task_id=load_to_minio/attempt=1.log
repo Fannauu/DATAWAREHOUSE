@@ -1,7 +1,0 @@
-{"timestamp":"2025-08-31T10:44:32.485745","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
-{"timestamp":"2025-08-31T10:44:32.486270","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/welcome_dag.py","logger":"airflow.models.dagbag.DagBag"}
-{"timestamp":"2025-08-31T10:44:32.867573","level":"warning","event":"Using Connection.get_connection_from_secrets from `airflow.models` is deprecated.Please use `get` on Connection from sdk(`airflow.sdk.Connection`) instead","category":"DeprecationWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/models/connection.py","lineno":471,"logger":"py.warnings"}
-{"timestamp":"2025-08-31T10:44:32.875840","level":"info","event":"Connection Retrieved 'minio_conn'","logger":"airflow.hooks.base"}
-{"timestamp":"2025-08-31T10:44:32.877108","level":"info","event":"AWS Connection (conn_id='minio_conn', conn_type='aws') credentials retrieved from login and ***.","logger":"airflow.providers.amazon.aws.utils.connection_wrapper.AwsConnectionWrapper"}
-{"timestamp":"2025-08-31T10:44:33.439728Z","level":"info","event":"File uploaded to MinIO successfully.","chan":"stdout","logger":"task"}
-{"timestamp":"2025-08-31T10:44:33.440263","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
