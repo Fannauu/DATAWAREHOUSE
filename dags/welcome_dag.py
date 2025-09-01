@@ -55,8 +55,6 @@ def transform_weather_data(ti):
         sunrise_time = datetime.fromtimestamp(weather_json["sys"]["sunrise"])
         sunset_time = datetime.fromtimestamp(weather_json["sys"]["sunset"])
 
-
-
         df = pd.DataFrame([{
             "City": city,
             "Description": description,
