@@ -59,7 +59,6 @@ def transform_weather_data(ti):
         sunset_time = datetime.fromtimestamp(weather_json["sys"]["sunset"], tz=pytz.UTC).astimezone(phnom_penh_tz)
 
 
-
         df = pd.DataFrame([{
             "City": city,
             "Description": description,
