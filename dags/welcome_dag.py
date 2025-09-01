@@ -9,7 +9,7 @@ import pandas as pd
 import os
 import pytz
 
-pnhom_penh_tz = pytz.timezone('Asia/Phnom_Penh')
+phnom_penh_tz = pytz.timezone('Asia/Phnom_Penh')
 
 def kelvin_to_celsius(kelvin):
     return round(kelvin - 273.15, 2)
@@ -54,11 +54,11 @@ def transform_weather_data(ti):
 
 
         # Time data
-        record_time = datetime.fromtimestamp(weather_json["dt"], tz=pytz.UTC).astimezone(pnhom_penh_tz)
-        sunrise_time = datetime.fromtimestamp(weather_json["sys"]["sunrise"], tz=pytz.UTC).astimezone(pnhom_penh_tz)
-        sunset_time = datetime.fromtimestamp(weather_json["sys"]["sunset"], tz=pytz.UTC).astimezone(pnhom_penh_tz)
+        record_time = datetime.now(phnom_penh_tz)
+        sunrise_time = datetime.fromtimestamp(weather_json["sys"]["sunrise"], tz=pytz.UTC).astimezone(phnom_penh_tz)
+        sunset_time = datetime.fromtimestamp(weather_json["sys"]["sunset"], tz=pytz.UTC).astimezone(phnom_penh_tz)
 
-        
+
 
         df = pd.DataFrame([{
             "City": city,
@@ -121,7 +121,7 @@ with DAG(
     dag_id="weather_etl",
     default_args=default_args,
     description='Weather ETL pipeline for Phnom Penh',
-    schedule=timedelta(minutes=1),  # Every 5 minutes
+    schedule="@daily",  # Every day
     catchup=False,
     tags=['weather', 'etl', 'minio']
 ) as dag:
